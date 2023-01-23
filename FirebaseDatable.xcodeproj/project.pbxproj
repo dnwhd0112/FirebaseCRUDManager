@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10AF025297D5561004F1400 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AF024297D5561004F1400 /* Encodable+Extension.swift */; };
+		E10AF027297D5FA8004F1400 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AF026297D5FA8004F1400 /* FirebaseManager.swift */; };
+		E10AF02A297D6089004F1400 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E10AF029297D6089004F1400 /* FirebaseDatabase */; };
+		E10AF02C297D6089004F1400 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E10AF02B297D6089004F1400 /* FirebaseDatabaseSwift */; };
+		E10AF030297D6692004F1400 /* FirebaseManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AF02F297D6692004F1400 /* FirebaseManagerError.swift */; };
 		E135518D297A25D700CD3F21 /* FirebaseDatable.docc in Sources */ = {isa = PBXBuildFile; fileRef = E135518C297A25D700CD3F21 /* FirebaseDatable.docc */; };
 		E135518E297A25D700CD3F21 /* FirebaseDatable.h in Headers */ = {isa = PBXBuildFile; fileRef = E135518B297A25D700CD3F21 /* FirebaseDatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1355199297A2CE100CD3F21 /* FirebaseDatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1355198297A2CE100CD3F21 /* FirebaseDatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10AF024297D5561004F1400 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		E10AF026297D5FA8004F1400 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		E10AF02F297D6692004F1400 /* FirebaseManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManagerError.swift; sourceTree = "<group>"; };
 		E1355188297A25D700CD3F21 /* FirebaseDatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirebaseDatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E135518B297A25D700CD3F21 /* FirebaseDatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseDatable.h; sourceTree = "<group>"; };
 		E135518C297A25D700CD3F21 /* FirebaseDatable.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FirebaseDatable.docc; sourceTree = "<group>"; };
+		E1355198297A2CE100CD3F21 /* FirebaseDatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22,12 +32,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10AF02C297D6089004F1400 /* FirebaseDatabaseSwift in Frameworks */,
+				E10AF02A297D6089004F1400 /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E10AF02E297D667F004F1400 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E10AF02F297D6692004F1400 /* FirebaseManagerError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		E135517E297A25D700CD3F21 = {
 			isa = PBXGroup;
 			children = (
@@ -47,10 +67,38 @@
 		E135518A297A25D700CD3F21 /* FirebaseDatable */ = {
 			isa = PBXGroup;
 			children = (
+				E1355195297A2C7A00CD3F21 /* Source */,
 				E135518B297A25D700CD3F21 /* FirebaseDatable.h */,
 				E135518C297A25D700CD3F21 /* FirebaseDatable.docc */,
 			);
 			path = FirebaseDatable;
+			sourceTree = "<group>";
+		};
+		E1355195297A2C7A00CD3F21 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E10AF02E297D667F004F1400 /* Error */,
+				E1355197297A2C8A00CD3F21 /* General */,
+				E1355196297A2C8000CD3F21 /* Extension */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E1355196297A2C8000CD3F21 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E10AF024297D5561004F1400 /* Encodable+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E1355197297A2C8A00CD3F21 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E1355198297A2CE100CD3F21 /* FirebaseDatable.swift */,
+				E10AF026297D5FA8004F1400 /* FirebaseManager.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +129,10 @@
 			dependencies = (
 			);
 			name = FirebaseDatable;
+			packageProductDependencies = (
+				E10AF029297D6089004F1400 /* FirebaseDatabase */,
+				E10AF02B297D6089004F1400 /* FirebaseDatabaseSwift */,
+			);
 			productName = FirebaseDatable;
 			productReference = E1355188297A25D700CD3F21 /* FirebaseDatable.framework */;
 			productType = "com.apple.product-type.framework";
@@ -108,6 +160,9 @@
 				Base,
 			);
 			mainGroup = E135517E297A25D700CD3F21;
+			packageReferences = (
+				E10AF028297D6089004F1400 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E1355189297A25D700CD3F21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,7 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10AF027297D5FA8004F1400 /* FirebaseManager.swift in Sources */,
+				E1355199297A2CE100CD3F21 /* FirebaseDatable.swift in Sources */,
 				E135518D297A25D700CD3F21 /* FirebaseDatable.docc in Sources */,
+				E10AF030297D6692004F1400 /* FirebaseManagerError.swift in Sources */,
+				E10AF025297D5561004F1400 /* Encodable+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +396,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E10AF028297D6089004F1400 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E10AF029297D6089004F1400 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E10AF028297D6089004F1400 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E10AF02B297D6089004F1400 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E10AF028297D6089004F1400 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E135517F297A25D700CD3F21 /* Project object */;
 }
